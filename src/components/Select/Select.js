@@ -4,12 +4,14 @@ import styled from "styled-components";
 import { COLORS } from "../../constants";
 import Icon from "../Icon";
 import { getDisplayedValue } from "./Select.helpers";
+import VisuallyHidden from "../VisuallyHidden";
 
 const Select = ({ label, value, onChange, children }) => {
   const displayedValue = getDisplayedValue(value, children);
 
   return (
     <Wrapper>
+      <VisuallyHidden>{label}</VisuallyHidden>
       <NativeSelect value={value} onChange={onChange}>
         {children}
       </NativeSelect>
@@ -23,7 +25,7 @@ const Select = ({ label, value, onChange, children }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   position: relative;
   width: max-content;
 `;
