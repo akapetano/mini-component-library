@@ -65,13 +65,15 @@ const Input = styled.input`
   padding-left: var(--paddingLeft);
   color: ${COLORS.gray700};
   font-size: var(--fontSize);
+  font-weight: 700;
 
   &:hover {
     color: ${COLORS.black};
   }
 
-  &:has(&[value=""]) {
-    font-weight: 700;
+  &::placeholder {
+    font-weight: 400;
+    color: ${COLORS.gray500};
   }
 `;
 
